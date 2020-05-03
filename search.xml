@@ -1,60 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/04/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <span class="exturl"><a class="exturl__link"   href="https://hexo.io/"  target="_blank" rel="noopener">Hexo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>! This is your very first post. Check <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/"  target="_blank" rel="noopener">documentation</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/troubleshooting.html"  target="_blank" rel="noopener">troubleshooting</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> or you can ask me on <span class="exturl"><a class="exturl__link"   href="https://github.com/hexojs/hexo/issues"  target="_blank" rel="noopener">GitHub</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>.</p>
-
-        <h2 id="Quick-Start"   >
-          <a href="#Quick-Start" class="heading-link"><i class="fas fa-link"></i></a>Quick Start</h2>
-      
-        <h3 id="Create-a-new-post"   >
-          <a href="#Create-a-new-post" class="heading-link"><i class="fas fa-link"></i></a>Create a new post</h3>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/writing.html"  target="_blank" rel="noopener">Writing</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-
-        <h3 id="Run-server"   >
-          <a href="#Run-server" class="heading-link"><i class="fas fa-link"></i></a>Run server</h3>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/server.html"  target="_blank" rel="noopener">Server</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-
-        <h3 id="Generate-static-files"   >
-          <a href="#Generate-static-files" class="heading-link"><i class="fas fa-link"></i></a>Generate static files</h3>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/generating.html"  target="_blank" rel="noopener">Generating</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-
-        <h3 id="Deploy-to-remote-sites"   >
-          <a href="#Deploy-to-remote-sites" class="heading-link"><i class="fas fa-link"></i></a>Deploy to remote sites</h3>
-      <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></div></figure>
-
-<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/one-command-deployment.html"  target="_blank" rel="noopener">Deployment</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-]]></content>
+    <title>双色球选号小工具</title>
+    <url>/2020/05/03/shuangseqiu.html</url>
+    <content><![CDATA[<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .tips-box{
+        margin-top:50px;
+        padding:32px 10px;
+        color:teal;
+        font-size:18px;
+        text-align: center;
+    }
+    .red{
+        color:#f54646;
+        font-weight:bold;
+    }
+    .blue{
+        color:#39f;
+        font-weight:bold;
+    }
+    .ball-box{
+        margin:32px 0;
+        padding:10px;
+        text-align: center;
+    }
+    .ball-box .name{
+        color:teal;
+        font-size:18px;
+        font-weight:bold;
+        padding:20px 0;
+    }
+    .ball{
+        display:inline-block;
+        margin-right: 5px;
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        vertical-align: middle;
+        font-size: 20px;
+        font-weight:bold;
+        text-align: center;
+        border:2px solid #fff;
+        border-radius: 50%;
+    }
+    .ball-red{
+        color: #f54646;
+        border-color:#f54646;
+    }
+    .ball-blue{
+        color: #39f;
+        border-color:#39f;
+        margin-right:0;
+    }
+    .btn-box{
+        text-align: center;
+    }
+    #creat-btn{
+        display:inline-block;
+        width:123px;
+        height:50px;
+        line-height: 50px;
+        text-align: center;
+        font-size:20px;
+        border:1px solid #ccc;
+        cursor:pointer;
+    }
+    #recently{
+        padding-bottom:50px;
+    }
+    #recently .recently-header{
+        margin-top:66px;
+        width:100%;
+        height:50px;
+        background: #eee;
+        color:teal;
+        font-size:20px;
+        text-align: center;
+        line-height: 50px;
+        cursor:pointer;
+    }
+    #recently .recently-box .main-cont{
+        display:none;
+    }
+    .haha{
+        padding-top:20px;
+        width:100%;
+        height:32px;
+        color:teal;
+        font-size:16px;
+        text-align: center;
+        line-height: 32px;
+    }</style>
+<script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>  
+<div class="tips-box">
+    “双色球”每注投注号码由 <span class="red">6个红色球</span>  号码和 <span class="blue">1个蓝色球</span> 号码组成。红色球号码从1--33中选择；蓝色球号码从1--16中选择。
+</div>
+<div class="ball-box">
+    <span class="ball ball-red ">?</span>
+    <span class="ball ball-red">?</span>
+    <span class="ball ball-red">?</span>
+    <span class="ball ball-red">?</span>
+    <span class="ball ball-red">?</span>
+    <span class="ball ball-red">?</span>
+    <span class="ball ball-blue">?</span>
+</div>
+<div class="btn-box">
+    <button id="creat-btn">开始选号</button>
+    <div class="haha">只做参考，不包中奖，祝君好运，中奖打赏</div>
+</div>
+<div id="recently"></div>    
+<script>
+var creatBtn = document.getElementById('creat-btn');
+var redBalls = document.getElementsByClassName('ball-red');
+var blueBall = document.getElementsByClassName('ball-blue')[0];
+var redballs = [];
+var isGo = true;
+creatBtn.addEventListener('click',function(){
+    if(isGo) {
+        creatBtn.innerHTML="停止";
+        timer = setInterval(function(){
+            creatReadBalls(6,1,33);
+            for(var i=0;i<6;i++){
+                redBalls[i].innerHTML = redballs[i];
+            }
+            var blueNum = Math.round(Math.random()*15)+1;  
+            if(blueNum<10){
+                blueNum = '0'+blueNum;
+            }
+            blueBall.innerHTML = blueNum;
+        },100)
+    } else {
+        creatBtn.innerHTML="再次选号";
+        clearInterval(timer);
+    }    
+    isGo = !isGo;  //按钮冲突改变
+})
+function creatReadBalls(n,min,max){
+    var arr=[];
+    for(i=0;i<n;i++){
+        arr[i]=parseInt(Math.random()*(max-min+1)+min);
+    }
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(arr[i]==arr[j]){
+                creatReadBalls(n,min,max);
+                return false;
+            }
+        }
+    }
+    redballs = arr;
+    redballs.sort(function (a,b){
+        return a - b
+    });
+    for(var i=0;i<redballs.length;i++){
+        if(redballs[i]<10){
+            redballs[i]='0'+redballs[i];
+        }
+    }
+}
+</script>
+<script>
+$(function(){$.ajax({type:'get',dataType:'jsonp',url:'http://www.17500.cn/interface/lotlistjsonp.php?callback=cb&lotid=ss&issue=2019241&limit=10',success:function(data){var lists = data.kjdata.split('</br>');var obj = [];for(var i=1;i<lists.length;i++){var a = lists[i].split('：');var b = a[1].replace("+", " ").split(' ');obj.push({name:a[0],nums:b})}$('#recently').html(`<div class="recently-box"><div class="recently-header">点击查看近期开奖号码</div><div class="main-cont"><div class="ball-box"><div class="name">${obj[0].name}</div><span class="ball ball-red ">${obj[0].nums[0]}</span><span class="ball ball-red">${obj[0].nums[1]}</span><span class="ball ball-red">${obj[0].nums[2]}</span><span class="ball ball-red">${obj[0].nums[3]}</span><span class="ball ball-red">${obj[0].nums[4]}</span><span class="ball ball-red">${obj[0].nums[5]}</span><span class="ball ball-blue">${obj[0].nums[6]}</span></div><div class="ball-box"><div class="name">${obj[1].name}</div><span class="ball ball-red ">${obj[1].nums[0]}</span><span class="ball ball-red">${obj[1].nums[1]}</span><span class="ball ball-red">${obj[1].nums[2]}</span><span class="ball ball-red">${obj[1].nums[3]}</span><span class="ball ball-red">${obj[1].nums[4]}</span><span class="ball ball-red">${obj[1].nums[5]}</span><span class="ball ball-blue">${obj[1].nums[6]}</span></div><div class="ball-box"><div class="name">${obj[2].name}</div><span class="ball ball-red ">${obj[2].nums[0]}</span><span class="ball ball-red">${obj[2].nums[1]}</span><span class="ball ball-red">${obj[2].nums[2]}</span><span class="ball ball-red">${obj[2].nums[3]}</span><span class="ball ball-red">${obj[2].nums[4]}</span><span class="ball ball-red">${obj[2].nums[5]}</span><span class="ball ball-blue">${obj[2].nums[6]}</span></div><div class="ball-box"><div class="name">${obj[3].name}</div><span class="ball ball-red ">${obj[3].nums[0]}</span><span class="ball ball-red">${obj[3].nums[1]}</span><span class="ball ball-red">${obj[3].nums[2]}</span><span class="ball ball-red">${obj[3].nums[3]}</span><span class="ball ball-red">${obj[3].nums[4]}</span><span class="ball ball-red">${obj[3].nums[5]}</span><span class="ball ball-blue">${obj[3].nums[6]}</span></div><div class="ball-box"><div class="name">${obj[4].name}</div><span class="ball ball-red ">${obj[4].nums[0]}</span><span class="ball ball-red">${obj[4].nums[1]}</span><span class="ball ball-red">${obj[4].nums[2]}</span><span class="ball ball-red">${obj[4].nums[3]}</span><span class="ball ball-red">${obj[4].nums[4]}</span><span class="ball ball-red">${obj[4].nums[5]}</span><span class="ball ball-blue">${obj[4].nums[6]}</span></div><div class="ball-box"><div class="name">${obj[5].name}</div><span class="ball ball-red ">${obj[5].nums[0]}</span><span class="ball ball-red">${obj[5].nums[1]}</span><span class="ball ball-red">${obj[5].nums[2]}</span><span class="ball ball-red">${obj[5].nums[3]}</span><span class="ball ball-red">${obj[5].nums[4]}</span><span class="ball ball-red">${obj[5].nums[5]}</span><span class="ball ball-blue">${obj[5].nums[6]}</span></div><div class="ball-box"><div class="name">${obj[6].name}</div><span class="ball ball-red ">${obj[6].nums[0]}</span><span class="ball ball-red">${obj[6].nums[1]}</span><span class="ball ball-red">${obj[6].nums[2]}</span><span class="ball ball-red">${obj[6].nums[3]}</span><span class="ball ball-red">${obj[6].nums[4]}</span><span class="ball ball-red">${obj[6].nums[5]}</span><span class="ball ball-blue">${obj[6].nums[6]}</span></div><div class="ball-box"><div class="name">${obj[7].name}</div><span class="ball ball-red ">${obj[7].nums[0]}</span><span class="ball ball-red">${obj[7].nums[1]}</span><span class="ball ball-red">${obj[7].nums[2]}</span><span class="ball ball-red">${obj[7].nums[3]}</span><span class="ball ball-red">${obj[7].nums[4]}</span><span class="ball ball-red">${obj[7].nums[5]}</span><span class="ball ball-blue">${obj[7].nums[6]}</span></div><div class="ball-box"><div class="name">${obj[8].name}</div><span class="ball ball-red ">${obj[8].nums[0]}</span><span class="ball ball-red">${obj[8].nums[1]}</span><span class="ball ball-red">${obj[8].nums[2]}</span><span class="ball ball-red">${obj[8].nums[3]}</span><span class="ball ball-red">${obj[8].nums[4]}</span><span class="ball ball-red">${obj[8].nums[5]}</span><span class="ball ball-blue">${obj[8].nums[6]}</span></div><div class="ball-box"><div class="name">${obj[9].name}</div><span class="ball ball-red ">${obj[9].nums[0]}</span><span class="ball ball-red">${obj[9].nums[1]}</span><span class="ball ball-red">${obj[9].nums[2]}</span><span class="ball ball-red">${obj[9].nums[3]}</span><span class="ball ball-red">${obj[9].nums[4]}</span><span class="ball ball-red">${obj[9].nums[5]}</span><span class="ball ball-blue">${obj[9].nums[6]}</span></div></div></div>`)}});$('#recently').click(function(){$('.main-cont').slideToggle(800);})})</script>]]></content>
+      <categories>
+        <category>Tool</category>
+      </categories>
       <tags>
-        <tag>highlight</tag>
+        <tag>双色球</tag>
       </tags>
   </entry>
   <entry>
-    <title>css</title>
-    <url>/2020/04/30/hello2/</url>
-    <content><![CDATA[<p>Welcome to <span class="exturl"><a class="exturl__link"   href="https://hexo.io/"  target="_blank" rel="noopener">Hexo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>! This is your very first post. Check <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/"  target="_blank" rel="noopener">documentation</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/troubleshooting.html"  target="_blank" rel="noopener">troubleshooting</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> or you can ask me on <span class="exturl"><a class="exturl__link"   href="https://github.com/hexojs/hexo/issues"  target="_blank" rel="noopener">GitHub</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>.<a id="more"></a></p>
+    <title>Hexo</title>
+    <url>/2020/04/29/hexo.html</url>
+    <content><![CDATA[<p>Welcome to <span class="exturl"><a class="exturl__link"   href="https://hexo.io/"  target="_blank" rel="noopener">Hexo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>! This is your very first post. Check <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/"  target="_blank" rel="noopener">documentation</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/troubleshooting.html"  target="_blank" rel="noopener">troubleshooting</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> or you can ask me on <span class="exturl"><a class="exturl__link"   href="https://github.com/hexojs/hexo/issues"  target="_blank" rel="noopener">GitHub</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>.</p>
+<a id="more"></a>
 
         <h2 id="Quick-Start"   >
           <a href="#Quick-Start" class="heading-link"><i class="fas fa-link"></i></a>Quick Start</h2>
       
+        <h3 id="hexo-init"   >
+          <a href="#hexo-init" class="heading-link"><i class="fas fa-link"></i></a>hexo init</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></div></figure>
+
+
         <h3 id="Create-a-new-post"   >
           <a href="#Create-a-new-post" class="heading-link"><i class="fas fa-link"></i></a>Create a new post</h3>
       <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></div></figure>
 
 <p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/writing.html"  target="_blank" rel="noopener">Writing</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
 
+        <h3 id="hexo-new-page"   >
+          <a href="#hexo-new-page" class="heading-link"><i class="fas fa-link"></i></a>hexo new page</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo new page music</span><br></pre></td></tr></table></div></figure>
+
+
         <h3 id="Run-server"   >
           <a href="#Run-server" class="heading-link"><i class="fas fa-link"></i></a>Run server</h3>
       <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></div></figure>
 
 <p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/server.html"  target="_blank" rel="noopener">Server</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="hexo-clean"   >
+          <a href="#hexo-clean" class="heading-link"><i class="fas fa-link"></i></a>hexo clean</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></div></figure>
+
 
         <h3 id="Generate-static-files"   >
           <a href="#Generate-static-files" class="heading-link"><i class="fas fa-link"></i></a>Generate static files</h3>
@@ -68,8 +220,11 @@
 
 <p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/one-command-deployment.html"  target="_blank" rel="noopener">Deployment</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
 ]]></content>
+      <categories>
+        <category>Tool</category>
+      </categories>
       <tags>
-        <tag>css</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
